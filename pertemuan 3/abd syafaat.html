@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Abd Syafaat S</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #001d3d, #003566);
+      overflow-x: hidden;
+      animation: skyCycle 30s linear infinite;
+    }
+
+    @keyframes skyCycle {
+      0%   { background: linear-gradient(to bottom, #001d3d, #003566); }  
+      25%  { background: linear-gradient(to bottom, #ff9966, #ff5e62); } 
+      50%  { background: linear-gradient(to bottom, #87ceeb, #f0fdfa); } 
+      75%  { background: linear-gradient(to bottom, #f59e0b, #ef4444); } 
+      100% { background: linear-gradient(to bottom, #001d3d, #003566); } 
+    }
+
+   
+    .star {
+      position: fixed;
+      background: white;
+      border-radius: 50%;
+      width: 3px;
+      height: 3px;
+      top: 0;
+      left: 0;
+      box-shadow: 100px 200px white, 300px 150px white, 500px 100px white,
+                  700px 250px white, 900px 180px white, 200px 300px white,
+                  400px 350px white, 800px 320px white, 1000px 200px white;
+      animation: twinkle 3s infinite alternate;
+      z-index: 0;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to   { opacity: 1; }
+    }
+
+  
+    header {
+      background: #0284c7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header .profil {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      color: #0284c7;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+   
+    .sun {
+      position: fixed;
+      bottom: 150px;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      background: radial-gradient(circle, #fbbf24, #f59e0b);
+      border-radius: 50%;
+      box-shadow: 0 0 60px rgba(251,191,36,0.6);
+      animation: floatSun 6s ease-in-out infinite alternate,
+                 sunPath 30s linear infinite;
+      z-index: 0;
+    }
+    @keyframes floatSun {
+      from { transform: translateY(0); }
+      to { transform: translateY(-30px); }
+    }
+    @keyframes sunPath {
+      0%   { bottom: -100px; left: 10%; opacity: 0; }
+      25%  { bottom: 200px; left: 30%; opacity: 1; }
+      50%  { bottom: 250px; left: 50%; opacity: 1; }
+      75%  { bottom: 200px; left: 70%; opacity: 1; }
+      100% { bottom: -100px; left: 90%; opacity: 0; }
+    }
+
+    
+    .cloud {
+      position: fixed;
+      top: 80px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: moveClouds 40s linear infinite;
+      z-index: 0;
+    }
+    .cloud::before, .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+    .cloud1 {
+      width: 120px; height: 60px;
+      left: -200px;
+      animation-duration: 60s;
+    }
+    .cloud1::before {
+      width: 80px; height: 80px;
+      top: -20px; left: 10px;
+    }
+    .cloud1::after {
+      width: 60px; height: 60px;
+      top: -10px; left: 70px;
+    }
+    .cloud2 {
+      width: 160px; height: 70px;
+      top: 150px; left: -300px;
+      animation-duration: 80s;
+    }
+    .cloud2::before {
+      width: 100px; height: 100px;
+      top: -20px; left: 20px;
+    }
+    .cloud2::after {
+      width: 80px; height: 80px;
+      top: -10px; left: 90px;
+    }
+    @keyframes moveClouds {
+      from { transform: translateX(0); }
+      to { transform: translateX(200vw); }
+    }
+
+   
+    .mountain {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      clip-path: polygon(0% 100%, 20% 40%, 40% 80%, 60% 30%, 80% 70%, 100% 40%, 100% 100%);
+      z-index: 0;
+    }
+    .mountain1 {
+      background: #047857;
+      height: 200px;
+      animation: moveMountain1 30s linear infinite;
+    }
+    .mountain2 {
+      background: #065f46;
+      height: 250px;
+      animation: moveMountain2 60s linear infinite;
+    }
+    @keyframes moveMountain1 {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50px); }
+    }
+    @keyframes moveMountain2 {
+      from { transform: translateX(0); }
+      to { transform: translateX(50px); }
+    }
+
+  
+    .bird {
+      position: fixed;
+      top: 120px;
+      left: -60px;
+      width: 40px;
+      height: 20px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: -20px 0 0 0 black, 20px 0 0 0 black;
+      animation: fly 20s linear infinite;
+      z-index: 1;
+    }
+    .bird2 {
+      top: 180px;
+      animation-duration: 25s;
+      opacity: 0.7;
+    }
+    @keyframes fly {
+      from { transform: translateX(0) translateY(0) scale(1); }
+      50%  { transform: translateX(100vw) translateY(-50px) scale(1.2); }
+      to   { transform: translateX(200vw) translateY(0) scale(1); }
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background: #0284c7;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .whatsapp-link {
+      color: #25d366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .whatsapp-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="star"></div>
+
+  <div class="sun"></div>
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="mountain mountain1"></div>
+  <div class="mountain mountain2"></div>
+  <div class="bird"></div>
+  <div class="bird bird2"></div>
+
+  <header>
+    <div class="profil">
+      <img src="images/foto-profil.jpg" alt="Foto Abd Syafaat S">
+      <h1>Abd Syafaat S</h1>
+    </div>
+    <nav>
+      <a href="#tentang">Tentang Saya</a>
+      <a href="#hobi">Hobi</a>
+      <a href="#proyek">Proyek Tugas</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <div class="card">
+      <p>Halo, saya <b>Abd Syafaat S.</b> Saya berasal dari Enrekang tepatnya di Salukanan yang terkenal dengan salah satu beras termahal di Indonesia yaitu pulu mandoti, sekarang saya berumur 19 tahun , Saya anak ke dua dari tiga bersaudara dari bapak seorang petani dan ibu rumah tangga . Saya tertarik pada olahraga dan saya suka naik gunung.</p>
+    </div>
+  </section>
+
+  <section id="hobi">
+    <h2>Hobi</h2>
+    <div class="card">
+      <ul>
+        <li>Futsal</li>
+        <li>Voli</li>
+        <li>Naik gunung Latimojong</li>
+        <li>Butuh info Balu Bialo</li>
+        <li>Butuh info Bawakaraeng</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek Tugas</h2>
+    <div class="card">
+      <p>Berikut beberapa proyek dan tugas yang sudah saya kerjakan di gitHub.</p>
+      <a href="https://github.com/Bhosson" target="_blank">github.com/Bhosson</a>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <div class="card">
+      <p>Email: abd4318@sma.belajar.id</p>
+      <p>GitHub: <a href="https://github.com/Bhosson" target="_blank">github.com/Bhosson</a></p>
+      <p>WhatsApp: <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-link">+62 812-3456-789</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Abd Syafaat S  dengan NIM 240210502012 Mahasiswa Teknik Komputer</p>
+  </footer>
+</body>
+</html>
