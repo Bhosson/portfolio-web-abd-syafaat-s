@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Abd Syafaat S</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #064e3b, #065f46, #064e3b);
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: rgba(5, 150, 105, 0.92);
+      backdrop-filter: blur(6px);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;    
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    .profil {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+    }
+
+    @keyframes onePiece {
+      0% { 
+        transform: scale(0.5) rotate(-5deg);
+        opacity: 0;
+      }
+      50% { 
+        transform: scale(1.05) rotate(3deg);
+        opacity: 1;
+      }
+      70% {
+        transform: scale(0.98) rotate(-2deg);
+      }
+      100% { 
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    header img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%; 
+      border: 6px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      animation: onePiece 1.5s ease-out;
+      transition: transform 0.4s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f9fafb;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      justify-content: center; 
+    }
+    nav a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #bbf7d0;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      bottom: -3px;
+      left: 0;
+      background: #bbf7d0;
+      transition: width 0.3s ease;
+      border-radius: 5px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      color: #059669;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      position: relative;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    h2.show {
+      opacity: 1;
+      transform: translateY(0);
+      animation: onePiece 1.3s ease-out; /* animasi ala One Piece */
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #bbf7d0;
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+    .card {
+      background: #f9fafb;
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 850px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      transition: all 0.8s ease-out;
+      color: #1f2937;
+      opacity: 0;
+    }
+
+    .fade-left { transform: translateX(-80px); }
+    .fade-right { transform: translateX(80px); }
+    .fade-up { transform: translateY(80px); }
+    .fade-down { transform: translateY(-80px); }
+
+    .show {
+      opacity: 1;
+      transform: translate(0,0);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    ul li {
+      margin: 8px 0;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.6s ease;
+    }
+    ul li.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .whatsapp-link {
+      color: #25d366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .whatsapp-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #047857;
+      color: #f9fafb;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profil">
+      <img src="images/foto-profil.jpg" alt="Foto Abd Syafaat S">
+      <h1>Abd Syafaat S</h1>
+    </div>
+    <nav>
+      <a href="#tentang">Tentang Saya</a>
+      <a href="#hobi">Hobi</a>
+      <a href="#proyek">Proyek Tugas</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <div class="card fade-left">
+      <p>Halo, saya <b>Abd Syafaat S.</b> Saya berasal dari Enrekang tepatnya di Salukanan yang terkenal dengan salah satu beras termahal di Indonesia yaitu pulu mandoti, sekarang saya berumur 19 tahun. Saya anak ke dua dari tiga bersaudara dari bapak seorang petani dan ibu rumah tangga. Saya tertarik pada olahraga dan saya suka naik gunung.</p>
+    </div>
+  </section>
+
+  <section id="hobi">
+    <h2>Hobi</h2>
+    <div class="card fade-right">
+      <ul>
+        <li>Futsal</li>
+        <li>Voli</li>
+        <li>Naik gunung Latimojong</li>
+        <li>Butuh info Balu Bialo</li>
+        <li>Butuh info Bawakaraeng</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek Tugas</h2>
+    <div class="card fade-up">
+      <p>Berikut beberapa proyek dan tugas yang sudah saya kerjakan di GitHub.</p>
+      <a href="https://github.com/Bhosson" target="_blank">github.com/Bhosson</a>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <div class="card fade-down">
+      <p>Email: <a href="mailto:abd4318@sma.belajar.id" target="_blank">abd4318@sma.belajar.id</a></p>
+      <p>GitHub: <a href="https://github.com/Bhosson" target="_blank">github.com/Bhosson</a></p>
+      <p>WhatsApp: <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-link">+62 812-3456-789</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Abd Syafaat S dengan NIM 240210502012 Mahasiswa Teknik Komputer</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const hobbyItems = document.querySelectorAll('#hobi ul li');
+    const headings = document.querySelectorAll('h2');
+
+    function showOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerBottom) {
+          card.classList.add('show');
+
+          if (card.closest('#hobi')) {
+            hobbyItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('show');
+              }, index * 200);
+            });
+          }
+        }
+      });
+      headings.forEach((h2, index) => {
+        const h2Top = h2.getBoundingClientRect().top;
+        if (h2Top < triggerBottom && !h2.classList.contains('show')) {
+          setTimeout(() => {
+            h2.classList.add('show');
+          }, index * 300);
+        }
+      });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+</body>
+</html>
