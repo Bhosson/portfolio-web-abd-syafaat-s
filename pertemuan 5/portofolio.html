@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Abd Syafaat S</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #064e3b, #065f46, #064e3b);
+      color: #1f2937; line-height: 1.7;
+    }
+
+    header {
+      background: rgba(5,150,105,0.92);
+      backdrop-filter: blur(6px);
+      color: white; padding: 20px 40px;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: slideDown 1s ease-in-out;
+    }
+    @keyframes slideDown { from { transform: translateY(-100%);} to { transform: translateY(0);} }
+
+    .profil { display:flex; flex-direction:column; align-items:center; gap:15px; text-align:center; }
+
+    @keyframes onePiece {
+      0% { transform: scale(0.5) rotate(-5deg); opacity:0; }
+      50% { transform: scale(1.05) rotate(3deg); opacity:1; }
+      70% { transform: scale(0.98) rotate(-2deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
+    header img {
+      width: 220px; height: 220px; border-radius:50%; border:6px solid #fff;
+      object-fit:cover; box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      animation: onePiece 1.5s ease-out; transition: transform .4s ease;
+    }
+    header img:hover { transform: scale(1.1); }
+
+    header h1 { font-size:2rem; font-weight:bold; color:#f9fafb; letter-spacing:1px; }
+
+    .nav-row { display:flex; gap:25px; flex-wrap:wrap; margin-top:15px; justify-content:center; align-items:center; width:100%; }
+    nav { display:flex; gap:25px; align-items:center; }
+    nav a {
+      position:relative; color:white; text-decoration:none; font-weight:bold;
+      padding:6px 8px; border-radius:6px; transition: color .25s ease, background .25s ease;
+    }
+    nav a:hover, nav a:focus { color:#064e3b; background:#bbf7d0; outline:none; }
+    nav a::after {
+      content:""; position:absolute; width:0%; height:3px; bottom:-6px; left:0; background:#064e3b; transition:width .3s ease; border-radius:5px;
+    }
+    nav a.active { color:#064e3b; background:#bbf7d0; }
+    nav a.active::after { width:100%; }
+
+    .menu-toggle { display:none; background:transparent; border:2px solid rgba(255,255,255,0.2); padding:6px 10px; border-radius:8px; color:white; cursor:pointer; }
+    .menu-toggle:focus { outline:2px solid #fde68a; }
+
+    section { padding:80px 20px; position:relative; z-index:1; min-height:220px; }
+    h2 {
+      color:#059669; text-align:center; margin-bottom:20px; font-size:2rem; position:relative; font-weight:bold;
+      opacity:0; transform:translateY(40px); transition:all .8s ease;
+    }
+    h2.show { opacity:1; transform:translateY(0); animation: onePiece 1.3s ease-out; }
+    h2::after { content:""; display:block; width:60px; height:4px; background:#bbf7d0; margin:10px auto 0; border-radius:3px; }
+
+    .card {
+      background:#f9fafb; padding:25px; margin:20px auto; border-radius:15px; max-width:850px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.15); transition:all .8s ease-out; color:#1f2937;
+      opacity:0; transform:translateY(40px);
+    }
+    .card.show { opacity:1; transform:translateY(0); }
+
+    .card:hover { transform:translateY(-10px) scale(1.02); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
+
+    ul { list-style: none; padding-left:0; }
+    ul li { margin:8px 0; opacity:0; transform:translateX(30px); transition: all .5s ease; }
+    ul li.visible { opacity:1; transform:translateX(0); }
+
+    .whatsapp-link { color:#25d366; font-weight:bold; text-decoration:none; }
+    .whatsapp-link:hover { text-decoration:underline; }
+
+    footer { background:#047857; color:#f9fafb; text-align:center; padding:15px; margin-top:30px; position:relative; z-index:1; font-size:.9rem; }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display:inline-block; }
+      nav { display:none; flex-direction:column; gap:12px; margin-top:12px; width:100%; }
+      nav.open { display:flex; }
+      .nav-row { align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profil" aria-hidden="false">
+      <!-- lazy load image -->
+      <img src="images/foto-profil.jpg" alt="Foto Abd Syafaat S" loading="lazy" width="220" height="220">
+      <h1>Abd Syafaat S</h1>
+    </div>
+
+    <div class="nav-row" role="navigation" aria-label="Navigasi utama">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu ☰</button>
+      <nav id="main-nav">
+        <a href="#tentang" data-target="tentang">Tentang Saya</a>
+        <a href="#hobi" data-target="hobi">Hobi</a>
+        <a href="#proyek" data-target="proyek">Proyek Tugas</a>
+        <a href="#kontak" data-target="kontak">Kontak</a>
+        <a href="galeri.html" data-target="galeri">Galeri</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="tentang" tabindex="-1">
+      <h2>Tentang Saya</h2>
+      <div class="card" data-animate>
+        <p>Halo, saya <b>Abd Syafaat S.</b> Saya berasal dari Enrekang tepatnya di Salukanan yang terkenal dengan salah satu beras termahal di Indonesia yaitu pulu mandoti, sekarang saya berumur 19 tahun. Saya anak ke dua dari tiga bersaudara dari bapak seorang petani dan ibu rumah tangga. Saya tertarik pada olahraga dan saya suka naik gunung.</p>
+      </div>
+    </section>
+
+    <section id="hobi" tabindex="-1">
+      <h2>Hobi</h2>
+      <div class="card" data-animate>
+        <ul id="hobi-list" aria-live="polite">
+          <li>Futsal</li>
+          <li>Voli</li>
+          <li>Naik gunung Latimojong</li>
+          <li>Butuh info Balu Bialo</li>
+          <li>Butuh info Bawakaraeng</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proyek" tabindex="-1">
+      <h2>Proyek Tugas</h2>
+      <div class="card" data-animate>
+        <p>Berikut beberapa proyek dan tugas yang sudah saya kerjakan di GitHub.</p>
+        <p><a href="https://github.com/Bhosson" target="_blank" rel="noopener noreferrer">github.com/Bhosson</a></p>
+      </div>
+    </section>
+
+    <section id="kontak" tabindex="-1">
+      <h2>Kontak</h2>
+      <div class="card" data-animate>
+        <p>Email: <a href="mailto:abd4318@sma.belajar.id" target="_blank" rel="noopener noreferrer">abd4318@sma.belajar.id</a></p>
+        <p>GitHub: <a href="https://github.com/Bhosson" target="_blank" rel="noopener noreferrer">github.com/Bhosson</a></p>
+        <p>WhatsApp: <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-link" rel="noopener noreferrer">+62 812-3456-789</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Abd Syafaat S dengan NIM 240210502012 Mahasiswa Teknik Komputer</p>
+  </footer>
+
+  <script defer>
+    (function () {
+      'use strict';
+      const $ = sel => document.querySelector(sel);
+      const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', String(!expanded));
+          mainNav.classList.toggle('open');
+        });
+      }
+
+      $$('#main-nav a').forEach(a => {
+        if (a.hash && a.hash.startsWith('#')) {
+          a.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('open')) {
+              mainNav.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
+            const target = document.querySelector(a.hash);
+            if (target) {
+              setTimeout(() => target.focus({ preventScroll: true }), 300);
+            }
+          });
+        }
+      });
+
+      const sections = $$('main section');
+      const cards = $$('[data-animate]');
+      const hobbyListItems = Array.from(document.querySelectorAll('#hobi-list li'));
+
+      const rootMargin = '0px 0px -10% 0px';
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            const h2 = el.querySelector('h2');
+            if (h2) h2.classList.add('show');
+
+            
+            const localCards = el.querySelectorAll('.card');
+            localCards.forEach(c => c.classList.add('show'));
+
+            
+            if (el.id === 'hobi') {
+              hobbyListItems.forEach((li, idx) => {
+                li.style.transitionDelay = `${idx * 120}ms`;
+                li.classList.add('visible');
+              });
+            }
+
+            markActiveNav(el.id);
+          }
+        });
+      }, { root: null, rootMargin, threshold: 0.12 });
+
+      sections.forEach(sec => sectionObserver.observe(sec));
+
+      function markActiveNav(sectionId) {
+        $$('#main-nav a').forEach(a => {
+          const target = a.getAttribute('href')?.replace('#','');
+          if (target === sectionId) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+          } else {
+            a.classList.remove('active');
+            a.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            cardObserver.unobserve(entry.target); 
+          }
+        });
+      }, { threshold: 0.15 });
+
+      cards.forEach(c => cardObserver.observe(c));
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 'g' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (prefersReduced.matches) {
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.querySelectorAll('*').forEach(node => {
+          node.style.transition = 'none';
+          node.style.animation = 'none';
+        });
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const fromTop = window.scrollY + (window.innerHeight * 0.2);
+        let found = null;
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          if (!found && top <= fromTop) found = sec;
+        });
+        if (found) markActiveNav(found.id);
+      });
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) {
+          setTimeout(() => target.focus({ preventScroll: true }), 120);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

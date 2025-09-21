@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Bangun Ruang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .card {
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 300px;
+    }
+    input {
+      margin: 5px 0;
+      width: 100%;
+      padding: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Perhitungan Bangun Ruang</h2>
+
+  <div class="card">
+    <h3>Kubus</h3>
+    <label>Sisi:</label>
+    <input type="number" id="sisi">
+    <button onclick="hitungKubus()">Hitung</button>
+    <p id="hasilKubus"></p>
+  </div>
+
+  <div class="card">
+    <h3>Balok</h3>
+    <label>Panjang:</label>
+    <input type="number" id="panjang">
+    <label>Lebar:</label>
+    <input type="number" id="lebar">
+    <label>Tinggi:</label>
+    <input type="number" id="tinggi">
+    <button onclick="hitungBalok()">Hitung</button>
+    <p id="hasilBalok"></p>
+  </div>
+
+  <div class="card">
+    <h3>Tabung</h3>
+    <label>Jari-jari:</label>
+    <input type="number" id="jari">
+    <label>Tinggi:</label>
+    <input type="number" id="tinggiTabung">
+    <button onclick="hitungTabung()">Hitung</button>
+    <p id="hasilTabung"></p>
+  </div>
+
+  <script>
+    function hitungKubus() {
+      let s = document.getElementById("sisi").value;
+      let volume = Math.pow(s, 3);
+      let luas = 6 * Math.pow(s, 2);
+      document.getElementById("hasilKubus").innerHTML =
+        "Volume: " + volume + "<br>Luas Permukaan: " + luas;
+    }
+
+    function hitungBalok() {
+      let p = document.getElementById("panjang").value;
+      let l = document.getElementById("lebar").value;
+      let t = document.getElementById("tinggi").value;
+      let volume = p * l * t;
+      let luas = 2 * (p*l + p*t + l*t);
+      document.getElementById("hasilBalok").innerHTML =
+        "Volume: " + volume + "<br>Luas Permukaan: " + luas;
+    }
+
+    function hitungTabung() {
+      let r = document.getElementById("jari").value;
+      let t = document.getElementById("tinggiTabung").value;
+      let volume = Math.PI * Math.pow(r, 2) * t;
+      let luas = 2 * Math.PI * r * (r + t);
+      document.getElementById("hasilTabung").innerHTML =
+        "Volume: " + volume.toFixed(2) + "<br>Luas Permukaan: " + luas.toFixed(2);
+    }
+  </script>
+</body>
+</html>

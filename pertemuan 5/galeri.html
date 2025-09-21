@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Foto - Abd Syafaat S</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #064e3b, #065f46, #064e3b);
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: rgba(5, 150, 105, 0.92);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f9fafb;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      justify-content: center; 
+    }
+    nav a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #bbf7d0;
+    }
+
+    section {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #059669;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;         /* semua foto tinggi sama */
+      border-radius: 15px;
+      object-fit: cover;     /* crop otomatis biar proporsional */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #047857;
+      color: #f9fafb;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galeri Foto</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="galeri.html">Galeri</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Foto Kegiatan</h2>
+    <div class="gallery">
+      <img src="images/foto1.jpg" alt="Foto 1">
+      <img src="images/foto2.jpg" alt="Foto 2">
+      <img src="images/foto3.jpg" alt="Foto 3">
+      <img src="images/foto4.jpg" alt="Foto 4">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Abd Syafaat S | Galeri Foto</p>
+  </footer>
+</body>
+</html>

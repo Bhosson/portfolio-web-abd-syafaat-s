@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konversi Tipe Data</title>
+</head>
+<body>
+<h2>Contoh Konversi Tipe Data di JavaScript</h2>
+<script>
+  var str1 = "123";
+  var num1 = Number(str1);
+  document.write("String '123' -> Number: " + num1 + "<br>");
+
+  var str2 = "45.67";
+  var num2 = parseFloat(str2);
+  document.write("String '45.67' -> Float: " + num2 + "<br>");
+
+  var str3 = "89.99";
+  var num3 = parseInt(str3);
+  document.write("String '89.99' -> Integer: " + num3 + "<br>");
+
+  var angka = 2025;
+  var strAngka = String(angka);
+  document.write("Number 2025 -> String: " + strAngka + "<br>");
+
+  var boolTrue = true;
+  var boolFalse = false;
+  document.write("Boolean true -> Number: " + Number(boolTrue) + "<br>");
+  document.write("Boolean false -> Number: " + Number(boolFalse) + "<br>");
+
+  var n1 = 0;
+  var n2 = 100;
+  document.write("Number 0 -> Boolean: " + Boolean(n1) + "<br>");
+  document.write("Number 100 -> Boolean: " + Boolean(n2) + "<br>");
+
+  var s1 = "";
+  var s2 = "Hello";
+  document.write("String kosong '' -> Boolean: " + Boolean(s1) + "<br>");
+  document.write("String 'Hello' -> Boolean: " + Boolean(s2) + "<br>");
+</script>
+</body>
+</html>

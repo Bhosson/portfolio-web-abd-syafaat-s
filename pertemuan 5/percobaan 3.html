@@ -1,9 +1,18 @@
-<HTML> 
-<HEAD><TITLE> contoh sederhana JavaScript</TITLE></HEAD> 
-</BODY> 
-<script language="JavaScript"> 
-document.write("Selamat Belajar Angkatan 2019","<br>"); 
-document.write("JavaScript Pemrograman WEB Teknik Komputer"); 
-</script> 
-</BODY> 
-</HTML>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Contoh Sederhana JavaScript</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    const out = document.getElementById("output");
+    out.innerHTML = `
+      Selamat Belajar Angkatan 2019<br>
+      JavaScript Pemrograman WEB Teknik Komputer
+    `;
+  </script>
+</body>
+</html>
