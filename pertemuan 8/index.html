@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Risol Enak - Kulit Lembut, Isian Melimpah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            /* Placeholder untuk gambar risol yang menggugah selera */
+            background-image: url("foto1.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-red-700 shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-white tracking-wider">DAPUR RISOL</h1>
+            <nav class="flex space-x-4">
+                <a href="index.html" class="text-white font-semibold border-b-2 border-yellow-300">Tentang Kami</a>
+                <a href="menu.html" class="text-white hover:text-yellow-300 transition duration-300">Menu Risol</a>
+                <a href="checkout.html" id="nav-cart" class="text-white hover:text-yellow-300 transition duration-300 relative">
+                    🛒 Keranjang (<span id="cart-count">0</span>)
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section dengan Gambar Risol -->
+    <section class="h-96 flex items-center justify-center"> 
+    
+    <div 
+       class="bg-red-700 bg-opacity-80 p-8 rounded-xl max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center" >
+        
+        <div class="text-left">
+            <h2 class="text-4xl font-extrabold text-white mb-4 leading-tight">
+                 Risol Premium 
+            </h2>
+            <p class="text-lg text-gray-200 mb-6">
+                Kulit Lembut Anti Robek, Isian Melimpah Rasa Bintang Lima. Dijamin Bikin Ketagihan!
+            </p>
+            <a href="menu.html" class="bg-yellow-400 text-red-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105">
+                Lihat Semua Varian →
+            </a>
+        </div>
+        
+        <div class="hidden md:block">
+            <img 
+                src="foto1.jpg" 
+                alt="Gambar Risol Jumbo" 
+                class="w-full h-auto rounded-lg shadow-2xl object-cover"
+            >
+        </div>
+        
+    </div>
+</section>
+
+    <!-- Bagian Penjelasan Risol -->
+    <section class="container mx-auto max-w-4xl py-16 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-4xl font-bold text-red-700 text-center mb-10">Kenapa Memilih Risol Kami?</h3>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <!-- Keunggulan 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl text-yellow-500 mb-3">🔥</div>
+                <h4 class="text-xl font-semibold mb-2">Isian Super Penuh</h4>
+                <p class="text-gray-600">Kami tidak pelit! Setiap gigitan dipastikan mendapatkan isian yang melimpah, mulai dari ragout ayam hingga beef mayones.</p>
+            </div>
+            
+            <!-- Keunggulan 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl text-yellow-500 mb-3">🥚</div>
+                <h4 class="text-xl font-semibold mb-2">Resep Buatan Sendiri</h4>
+                <p class="text-gray-600">Menggunakan resep otentik yang telah disempurnakan. Rasa gurih dan bumbu khas yang tidak akan Anda temukan di tempat lain.</p>
+            </div>
+            
+            <!-- Keunggulan 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl text-yellow-500 mb-3">👩‍🍳</div>
+                <h4 class="text-xl font-semibold mb-2">Fresh & Higienis</h4>
+                <p class="text-gray-600">Dibuat setiap hari berdasarkan pesanan (Pre-Order) dengan standar kebersihan tertinggi untuk menjaga kualitas rasa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 mt-10">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; Dapur Risol Enak. Semua Hak Cipta Dilindungi.</p>
+            <p class="mt-2 text-sm">Hubungi kami via WhatsApp: <a href="https://wa.me/082395047659" class="text-green-400 hover:text-green-300 font-medium">082395047659</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Logika untuk menampilkan jumlah item di keranjang dari Local Storage
+        function updateCartStatus() {
+            const cart = JSON.parse(localStorage.getItem('risolCart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartStatus);
+    </script>
+</body>
+</html>
