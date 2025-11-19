@@ -17,9 +17,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-3xl font-extrabold text-white tracking-wider">DAPUR RISOL </h1>
             <nav class="flex space-x-4">
-                <a href="index.html" class="text-white hover:text-yellow-300 transition duration-300">Tentang Kami</a>
-                <a href="menu.html" class="text-white font-semibold border-b-2 border-yellow-300">Menu Risol</a>
-                <a href="checkout.html" id="nav-cart" class="text-white hover:text-yellow-300 transition duration-300 relative">
+                <a href="/" class="text-white hover:text-yellow-300 transition duration-300">Tentang Kami</a>
+                <a href="/menu" class="text-white font-semibold border-b-2 border-yellow-300">Menu Risol</a>
+                <a href="/checkout" id="nav-cart" class="text-white hover:text-yellow-300 transition duration-300 relative">
                     🛒 Keranjang (<span id="cart-count">0</span>)
                 </a>
             </nav>
@@ -129,7 +129,7 @@
         </div>
 
         <div class="text-center mt-12">
-            <a href="checkout.html" class="inline-block bg-yellow-500 text-red-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+            <a href="/checkout" class="inline-block bg-yellow-500 text-red-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
                 Lanjut ke Keranjang & Checkout
             </a>
         </div>
